@@ -13,6 +13,11 @@ public class DataModel {
     String disponibilidadIngresar;
     String mensajeAdicional;
     String hojaVida;
+    String salida;
+
+    public String getSalida() {
+        return salida;
+    }
 
     public String getNombreEmpleo() {
         return nombreEmpleo;
