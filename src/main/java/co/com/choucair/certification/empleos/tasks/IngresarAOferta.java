@@ -18,6 +18,6 @@ public class IngresarAOferta implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTON_COOKIES),
                 Scroll.to(BOTON_BUSCAR_TRABAJOS),
-                Click.on(TEXTO_TITULO_CARGO_UNO));
+                Click.on(TEXTO_TITULO_CARGO));
     }
 }

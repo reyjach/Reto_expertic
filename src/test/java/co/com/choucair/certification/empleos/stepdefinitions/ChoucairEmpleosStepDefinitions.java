@@ -1,6 +1,7 @@
 package co.com.choucair.certification.empleos.stepdefinitions;
 
-import co.com.choucair.certification.empleos.models.DataModel;
+import co.com.choucair.certification.empleos.models.BuscarEmpleoModel;
+import co.com.choucair.certification.empleos.models.InscripcionModel;
 import co.com.choucair.certification.empleos.questions.Resultado;
 import co.com.choucair.certification.empleos.questions.Resultado2;
 import co.com.choucair.certification.empleos.questions.Resultado3;
@@ -66,32 +67,32 @@ public class ChoucairEmpleosStepDefinitions {
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en panama$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<DataModel>dataSet) {
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoPanama.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en panama$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<DataModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de psicologo de seleccion en medellin$")
-    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<DataModel>dataSet) {
+    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoMedellin.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como psicologo de seleccion en medellin$")
-    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<DataModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en bogota$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota(List<DataModel>dataSet) {
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoBogota.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en bogota$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota(List<DataModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota(List<BuscarEmpleoModel>dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
@@ -106,7 +107,7 @@ public class ChoucairEmpleosStepDefinitions {
     }
 
     @Cuando("^él llena el formulario de inscribirse al empleo$")
-    public void élLlenaElFormualrioDeInscribirseAlEmpleo(List<DataModel> dataSet) {
+    public void élLlenaElFormualrioDeInscribirseAlEmpleo(List<InscripcionModel> dataSet) {
         theActorInTheSpotlight().attemptsTo(CompletarFormulario.deInscripcion(dataSet));
     }
 

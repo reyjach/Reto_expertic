@@ -1,8 +1,7 @@
 package co.com.choucair.certification.empleos.models;
 
-public class DataModel {
-    String nombreEmpleo;
-    String Ubicacion;
+public class InscripcionModel {
+
     String nombre;
     String correo;
     String celular;
@@ -17,14 +16,6 @@ public class DataModel {
 
     public String getSalida() {
         return salida;
-    }
-
-    public String getNombreEmpleo() {
-        return nombreEmpleo;
-    }
-
-    public String getUbicacion() {
-        return Ubicacion;
     }
 
     public String getNombre() {

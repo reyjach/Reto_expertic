@@ -49,7 +49,7 @@ Característica: Choucair Testing seccion empleos
   Escenario: Buscar un empleo en panama
     Y que pepe quiere acceder a la pagina de empleos
     Cuando el busca una oferta de analista de pruebas en bogota
-    |nombreEmpleo|Ubicacion|
+    |nombreEmpleo|ubicacion|
     |analista de pruebas|Bogota|
     Entonces  el verifica las ofertas de empleo como analista de pruebas en bogota
 

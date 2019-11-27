@@ -1,7 +1,7 @@
 package co.com.choucair.certification.empleos.tasks;
 
 import co.com.choucair.certification.empleos.interactions.SubirArchivo;
-import co.com.choucair.certification.empleos.models.DataModel;
+import co.com.choucair.certification.empleos.models.InscripcionModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsInterna.*;
@@ -18,10 +17,10 @@ import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
 public class CompletarFormulario implements Task {
 
-    private List<DataModel>dataSet;
-    public CompletarFormulario(List<DataModel> dataSet) { this.dataSet = dataSet;  }
+    private List<InscripcionModel>dataSet;
+    public CompletarFormulario(List<InscripcionModel> dataSet) { this.dataSet = dataSet;  }
 
-    public static CompletarFormulario deInscripcion(List<DataModel> dataSet) {return Tasks.instrumented(CompletarFormulario.class, dataSet);}
+    public static CompletarFormulario deInscripcion(List<InscripcionModel> dataSet) {return Tasks.instrumented(CompletarFormulario.class, dataSet);}
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -37,8 +36,7 @@ public class CompletarFormulario implements Task {
                 SelectFromOptions.byVisibleText(dataSet.get(CERO).getDisponibilidadIngresar()).from(SELECT_DISPONIBILIDAD_TIEMPO),
                 Enter.theValue(dataSet.get(CERO).getMensajeAdicional()).into(AREA_MENSAJE_ADICIONAL),
                 Scroll.to(AREA_MENSAJE_ADICIONAL),
-                SubirArchivo.desde(dataSet.get(CERO).getHojaVida()),
-                Click.on(RECAPTCHA)
+                SubirArchivo.desde(dataSet.get(CERO).getHojaVida())
         );
     }
 }
