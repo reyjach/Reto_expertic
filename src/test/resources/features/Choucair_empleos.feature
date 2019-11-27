@@ -12,7 +12,7 @@ Característica: Choucair Testing seccion empleos
     Y que pepe quiere ver el contenido de la pagina de empleos
     Cuando el da click en el boton que es ser choucair
 
-    Entonces  el verifica el texto de que es SER CHOUCAIR
+    Entonces  el verifica el titulo de que es SER CHOUCAIR
 
   @Tag2
   Escenario: Usar botones de redireccionamiento
@@ -24,7 +24,7 @@ Característica: Choucair Testing seccion empleos
   Escenario: Usar botones de redireccionamiento
     Y que pepe quiere ver el contenido de la pagina de empleos
     Cuando el da click en el boton prepararse para aplicar
-    Entonces  el verifica el texto de PREPARARSE PARA APLICAR
+    Entonces  el verifica el texto en PREPARARSE PARA APLICAR
 
   @Tag4
   Escenario: Buscar un empleo en panama

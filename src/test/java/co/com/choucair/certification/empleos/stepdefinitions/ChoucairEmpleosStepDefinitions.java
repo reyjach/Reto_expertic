@@ -3,6 +3,7 @@ package co.com.choucair.certification.empleos.stepdefinitions;
 import co.com.choucair.certification.empleos.models.DataModel;
 import co.com.choucair.certification.empleos.questions.Resultado;
 import co.com.choucair.certification.empleos.questions.Resultado2;
+import co.com.choucair.certification.empleos.questions.Resultado3;
 import co.com.choucair.certification.empleos.tasks.*;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -31,8 +32,8 @@ public class ChoucairEmpleosStepDefinitions {
         theActorInTheSpotlight().attemptsTo(Botones.boton());
     }
 
-    @Entonces("^el verifica el texto de que es (.*)$")
-    public void elVerificaElTextoDeQueEsSerChoucair(String frase) {
+    @Entonces("^el verifica el titulo de que es (.*)$")
+    public void elVerificaElTituloDeQueEsSerChoucair(String frase) {
         theActorInTheSpotlight().should(seeThat(Resultado.esLa(frase)));
     }
 
@@ -51,8 +52,8 @@ public class ChoucairEmpleosStepDefinitions {
         theActorInTheSpotlight().attemptsTo(Botones3.boton());
     }
 
-    @Entonces("^el verifica el texto de (.*)$")
-    public void elVerificaElTextoDePrepararseParaAplicar(String frase) {
+    @Entonces("^el verifica el texto en (.*)$")
+    public void elVerificaElTextoEnPrepararseParaAplicar(String frase) {
         theActorInTheSpotlight().should(seeThat(Resultado3.esLa(frase)));
     }
 

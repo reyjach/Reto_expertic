@@ -11,7 +11,7 @@ import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTesti
 public class Botones2 implements Task {
 
 
-    public static Performable boton(){return Tasks.instrumented(Menu.class);}
+    public static Botones2 boton(){return Tasks.instrumented(Botones2.class);}
 
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTON_CONVOCATORIAS));

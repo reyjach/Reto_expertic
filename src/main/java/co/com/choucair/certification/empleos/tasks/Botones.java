@@ -12,7 +12,7 @@ import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTesti
 public class Botones implements Task {
 
 
-    public static Performable boton(){return Tasks.instrumented(Menu.class);}
+    public static Botones boton(){return Tasks.instrumented(Botones.class);}
 
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTON_SER_CHOUCAIR));
