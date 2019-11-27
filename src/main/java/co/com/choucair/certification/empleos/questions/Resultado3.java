@@ -3,10 +3,8 @@ package co.com.choucair.certification.empleos.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-import net.serenitybdd.screenplay.questions.WebElementQuestion;
 
-import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.*;
-import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
+import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.PREPARARSE_PARA_APLICAR;
 
 
 public class Resultado3 implements Question<Boolean> {

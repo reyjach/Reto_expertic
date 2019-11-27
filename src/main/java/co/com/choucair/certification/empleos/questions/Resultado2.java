@@ -4,10 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.*;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
+import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.H2_CONVOCATORIAS;
 
 public class Resultado2 implements Question<Boolean> {
     private String palabra;

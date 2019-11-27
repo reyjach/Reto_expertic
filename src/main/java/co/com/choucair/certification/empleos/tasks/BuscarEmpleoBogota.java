@@ -1,7 +1,6 @@
 package co.com.choucair.certification.empleos.tasks;
 
 import co.com.choucair.certification.empleos.models.BuscarEmpleoModel;
-import co.com.choucair.certification.empleos.models.InscripcionModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -22,7 +21,7 @@ public class BuscarEmpleoBogota implements Task {
     }
 
     public static BuscarEmpleoBogota con(List<BuscarEmpleoModel> dataSet) {
-        return Tasks.instrumented(BuscarEmpleoBogota.class,dataSet);
+        return Tasks.instrumented(BuscarEmpleoBogota.class, dataSet);
     }
 
     @Override

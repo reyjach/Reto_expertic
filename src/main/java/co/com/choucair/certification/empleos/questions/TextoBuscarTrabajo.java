@@ -1,13 +1,14 @@
 package co.com.choucair.certification.empleos.questions;
 
 import co.com.choucair.certification.empleos.models.BuscarEmpleoModel;
-import co.com.choucair.certification.empleos.models.InscripcionModel;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 import java.util.List;
-import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.*;
+
+import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.TEXTO_CIUDAD_CARGO;
+import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.TEXTO_TITULO_CARGO;
 import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
 public class TextoBuscarTrabajo implements Question<Boolean> {

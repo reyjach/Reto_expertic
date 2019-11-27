@@ -1,6 +1,6 @@
 package co.com.choucair.certification.empleos.tasks;
 
-import co.com.choucair.certification.empleos.userinterfaces.*;
+import co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingHomePageUrl;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

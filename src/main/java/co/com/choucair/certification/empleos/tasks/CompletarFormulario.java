@@ -17,10 +17,15 @@ import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
 public class CompletarFormulario implements Task {
 
-    private List<InscripcionModel>dataSet;
-    public CompletarFormulario(List<InscripcionModel> dataSet) { this.dataSet = dataSet;  }
+    private List<InscripcionModel> dataSet;
 
-    public static CompletarFormulario deInscripcion(List<InscripcionModel> dataSet) {return Tasks.instrumented(CompletarFormulario.class, dataSet);}
+    public CompletarFormulario(List<InscripcionModel> dataSet) {
+        this.dataSet = dataSet;
+    }
+
+    public static CompletarFormulario deInscripcion(List<InscripcionModel> dataSet) {
+        return Tasks.instrumented(CompletarFormulario.class, dataSet);
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {

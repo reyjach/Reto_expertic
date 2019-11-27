@@ -1,7 +1,6 @@
 package co.com.choucair.certification.empleos.tasks;
 
 import co.com.choucair.certification.empleos.models.BuscarEmpleoModel;
-import co.com.choucair.certification.empleos.models.InscripcionModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

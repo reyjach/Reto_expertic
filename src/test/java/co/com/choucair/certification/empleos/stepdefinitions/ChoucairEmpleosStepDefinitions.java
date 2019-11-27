@@ -20,16 +20,18 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ChoucairEmpleosStepDefinitions {
+
+
     @Dado("^que (.*) quiere ingresar al sitio Choucair Testing$")
     public void queIvanQuiereIngresarAlSitioChoucairTesting(String ivan) {
         theActorCalled(ivan).wasAbleTo(Abrir.laPaginaDeChoucair());
     }
 
-
-    @Dado("^que pepe quiere ver el contenido de la pagina de empleos$")
-    public void quePepeQuiereVerElContenidoDeLaPaginaDeEmpleos() {
-        theActorInTheSpotlight().wasAbleTo(Menu.empleo());
+    @Dado("^que él quiere acceder a la sección de empleos$")
+    public void queÉlQuiereAccederALaSecciónDeEmpleos() {
+    theActorInTheSpotlight().wasAbleTo(Menu.empleo());
     }
+
 
     @Cuando("^el da click en el boton que es ser choucair$")
     public void elDaClickEnElBotonQueEsSerChoucair() {
@@ -61,10 +63,7 @@ public class ChoucairEmpleosStepDefinitions {
         theActorInTheSpotlight().should(seeThat(Resultado3.esLa(frase)));
     }
 
-    @Dado("^que pepe quiere acceder a la pagina de empleos$")
-    public void quePepeQuiereAccederALaPaginaDeEmpleos()  {
-        theActorInTheSpotlight().wasAbleTo(Menu.empleo());
-    }
+
 
     @Cuando("^el busca una oferta de analista de pruebas en panama$")
     public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<BuscarEmpleoModel>dataSet) {
@@ -96,10 +95,6 @@ public class ChoucairEmpleosStepDefinitions {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
-    @Dado("^que pepe quiere ingresar a la seccion empleos$")
-    public void quePepeQuiereLlenarElFormularioConSusDatos() {
-        theActorInTheSpotlight().wasAbleTo(IngresarALaSeccion.empleos());
-    }
 
     @Dado("^él quiere acceder a una oferta de empleo$")
     public void élQuiereAccederAUnaOfertaDeEmpleo() {
@@ -120,4 +115,12 @@ public class ChoucairEmpleosStepDefinitions {
     public void queCarlosQuiereLlenarElFormularioConDatosIncorrectos() {
 
     }
+
+    @Cuando("^el llena el formualrio de la pagina$")
+    public void elLlenaElFormualrioDeLaPagina(List<InscripcionModel> dataSet) {
+
+
+}
+
+
 }
