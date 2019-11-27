@@ -21,7 +21,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ChoucairEmpleosStepDefinitions {
 
-
+/*
     @Dado("^que (.*) quiere ingresar al sitio Choucair Testing$")
     public void queIvanQuiereIngresarAlSitioChoucairTesting(String ivan) {
         theActorCalled(ivan).wasAbleTo(Abrir.laPaginaDeChoucair());
@@ -29,7 +29,7 @@ public class ChoucairEmpleosStepDefinitions {
 
     @Dado("^que él quiere acceder a la sección de empleos$")
     public void queÉlQuiereAccederALaSecciónDeEmpleos() {
-    theActorInTheSpotlight().wasAbleTo(Menu.empleo());
+        theActorInTheSpotlight().wasAbleTo(Menu.empleo());
     }
 
 
@@ -64,34 +64,33 @@ public class ChoucairEmpleosStepDefinitions {
     }
 
 
-
     @Cuando("^el busca una oferta de analista de pruebas en panama$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<BuscarEmpleoModel>dataSet) {
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoPanama.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en panama$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<BuscarEmpleoModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de psicologo de seleccion en medellin$")
-    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel>dataSet) {
+    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoMedellin.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como psicologo de seleccion en medellin$")
-    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en bogota$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota(List<BuscarEmpleoModel>dataSet) {
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoBogota.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en bogota$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota(List<BuscarEmpleoModel>dataSet) {
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota(List<BuscarEmpleoModel> dataSet) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
@@ -119,8 +118,34 @@ public class ChoucairEmpleosStepDefinitions {
     @Cuando("^el llena el formualrio de la pagina$")
     public void elLlenaElFormualrioDeLaPagina(List<InscripcionModel> dataSet) {
 
+    }
 
-}
 
+    @Dado("^que Ivan quiere acceder a una oferta de empleo en el sitio Choucair$")
+    public void queIvanQuiereAccederAUnaOfertaDeEmpleoEnElSitioChoucair() {
+        theActorInTheSpotlight().wasAbleTo(Abrir.laPaginaDeChoucair(), IngresarALaSeccion.empleos());
+    }
 
+    @Cuando("^él llena el formulario de inscribirse al empleo$")
+    public void élLlenaElFormularioDeInscribirseAlEmpleo(List<InscripcionModel> dataSet) {
+        theActorInTheSpotlight().attemptsTo(CompletarFormulario.deInscripcion(dataSet));
+
+    }
+
+    @Entonces("^el verifica que no hay mensajes de error$")
+    public void elVerificaQueNoHayMensajesDeError() {
+
+    }
+
+    @Cuando("^el llena el formualrio en la pagina$")
+    public void elLlenaElFormualrioEnLaPagina() {
+
+    }
+
+    @Cuando("^el verifica que hay mensajes de error$")
+    public void elVerificaQueHayMensajesDeError() {
+
+    }
+
+*/
 }
