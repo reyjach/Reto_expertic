@@ -4,10 +4,13 @@ import co.com.choucair.certification.empleos.models.DataModel;
 import co.com.choucair.certification.empleos.questions.Resultado;
 import co.com.choucair.certification.empleos.questions.Resultado2;
 import co.com.choucair.certification.empleos.questions.Resultado3;
+import co.com.choucair.certification.empleos.questions.TextoBuscarTrabajo;
 import co.com.choucair.certification.empleos.tasks.*;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.GivenWhenThen;
+import net.serenitybdd.screenplay.actors.OnStage;
 
 import java.util.List;
 
@@ -58,38 +61,38 @@ public class ChoucairEmpleosStepDefinitions {
     }
 
     @Dado("^que pepe quiere acceder a la pagina de empleos$")
-    public void quePepeQuiereAccederALaPaginaDeEmpleos() {
-
+    public void quePepeQuiereAccederALaPaginaDeEmpleos()  {
+        theActorInTheSpotlight().wasAbleTo(Menu.empleo());
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en panama$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama() {
-
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoPanama.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en panama$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama() {
-
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de psicologo de seleccion en medellin$")
-    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin() {
-
+    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoMedellin.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como psicologo de seleccion en medellin$")
-    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin() {
-
+    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en bogota$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota() {
-
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnBogota(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().attemptsTo(BuscarEmpleoBogota.con(dataSet));
     }
 
     @Entonces("^el verifica las ofertas de empleo como analista de pruebas en bogota$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota() {
-
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnBogota(List<DataModel>dataSet) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
     }
 
     @Dado("^que pepe quiere ingresar a la seccion empleos$")
