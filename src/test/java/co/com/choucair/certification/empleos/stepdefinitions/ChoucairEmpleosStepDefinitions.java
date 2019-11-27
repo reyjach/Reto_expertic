@@ -1,76 +1,68 @@
 package co.com.choucair.certification.empleos.stepdefinitions;
 
 import co.com.choucair.certification.empleos.models.DataModel;
-
 import co.com.choucair.certification.empleos.questions.Resultado;
 import co.com.choucair.certification.empleos.questions.Resultado2;
 import co.com.choucair.certification.empleos.tasks.*;
-
-import co.com.choucair.certification.empleos.tasks.Abrir;
-import co.com.choucair.certification.empleos.tasks.CompletarFormulario;
-import co.com.choucair.certification.empleos.tasks.IngresarALaSeccion;
-import co.com.choucair.certification.empleos.tasks.IngresarAOferta;
-
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actors.OnStage;
 
 import java.util.List;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ChoucairEmpleosStepDefinitions {
-    @Dado("^que Ivan quiere ingresar al sitio Choucair Testing$")
-    public void queIvanQuiereIngresarAlSitioChoucairTesting() {
-        OnStage.theActorCalled("Ivan").wasAbleTo(Abrir.laPaginaDeChoucair());
+    @Dado("^que (.*) quiere ingresar al sitio Choucair Testing$")
+    public void queIvanQuiereIngresarAlSitioChoucairTesting(String ivan) {
+        theActorCalled(ivan).wasAbleTo(Abrir.laPaginaDeChoucair());
     }
 
 
     @Dado("^que pepe quiere ver el contenido de la pagina de empleos$")
     public void quePepeQuiereVerElContenidoDeLaPaginaDeEmpleos() {
-        OnStage.theActorCalled("Ivan").wasAbleTo(Menu.empleo());
+        theActorInTheSpotlight().wasAbleTo(Menu.empleo());
     }
 
     @Cuando("^el da click en el boton que es ser choucair$")
     public void elDaClickEnElBotonQueEsSerChoucair() {
-        OnStage.theActorCalled("Ivan").wasAbleTo(Botones.boton());
+        theActorInTheSpotlight().attemptsTo(Botones.boton());
     }
 
     @Entonces("^el verifica el texto de que es (.*)$")
-    public void elVerificaElTextoDeQueEsSerChoucair(String palabra)  {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado.esLa(palabra)));
+    public void elVerificaElTextoDeQueEsSerChoucair(String frase) {
+        theActorInTheSpotlight().should(seeThat(Resultado.esLa(frase)));
     }
 
     @Cuando("^el da click en el boton convocatorias$")
-    public void elDaClickEnElBotonConvocatorias()  {
-        OnStage.theActorCalled("Ivan").wasAbleTo(Botones2.boton());
+    public void elDaClickEnElBotonConvocatorias() {
+        theActorInTheSpotlight().attemptsTo(Botones2.boton());
     }
 
     @Entonces("^el verifica el texto de (.*)$")
-    public void elVerificaElTextoDeConvocatorias(String palabra)  {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado2.esLa(palabra)));
+    public void elVerificaElTextoDeConvocatorias(String frase) {
+        theActorInTheSpotlight().should(seeThat(Resultado2.esLa(frase)));
     }
 
     @Cuando("^el da click en el boton prepararse para aplicar$")
     public void elDaClickEnElBotonPrepararseParaAplicar() {
-        OnStage.theActorCalled("Ivan").wasAbleTo(Botones3.boton());
+        theActorInTheSpotlight().attemptsTo(Botones3.boton());
     }
 
     @Entonces("^el verifica el texto de (.*)$")
-    public void elVerificaElTextoDePrepararseParaAplicar(String palabra) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado3.esLa(palabra)));
+    public void elVerificaElTextoDePrepararseParaAplicar(String frase) {
+        theActorInTheSpotlight().should(seeThat(Resultado3.esLa(frase)));
     }
 
     @Dado("^que pepe quiere acceder a la pagina de empleos$")
-    public void quePepeQuiereAccederALaPaginaDeEmpleos()  {
+    public void quePepeQuiereAccederALaPaginaDeEmpleos() {
 
     }
 
     @Cuando("^el busca una oferta de analista de pruebas en panama$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama()  {
+    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama() {
 
     }
 
