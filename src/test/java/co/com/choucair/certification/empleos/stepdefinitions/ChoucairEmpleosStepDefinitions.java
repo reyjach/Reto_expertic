@@ -1,10 +1,16 @@
 package co.com.choucair.certification.empleos.stepdefinitions;
 
-import co.com.choucair.certification.empleos.tasks.Abrir;
+import co.com.choucair.certification.empleos.models.DataModel;
+import co.com.choucair.certification.empleos.questions.Resultado;
+import co.com.choucair.certification.empleos.questions.Resultado2;
+import co.com.choucair.certification.empleos.tasks.*;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -12,43 +18,43 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class ChoucairEmpleosStepDefinitions {
     @Dado("^que Ivan quiere ingresar al sitio Choucair Testing$")
     public void queIvanQuiereIngresarAlSitioChoucairTesting() {
-        OnStage.theActorCalled("brandon").wasAbleTo(Abrir.laPaginaDeChoucair());
+        OnStage.theActorCalled("Ivan").wasAbleTo(Abrir.laPaginaDeChoucair());
     }
 
 
     @Dado("^que pepe quiere ver el contenido de la pagina de empleos$")
     public void quePepeQuiereVerElContenidoDeLaPaginaDeEmpleos() {
-
+        OnStage.theActorCalled("Ivan").wasAbleTo(Menu.empleo());
     }
 
     @Cuando("^el da click en el boton que es ser choucair$")
     public void elDaClickEnElBotonQueEsSerChoucair() {
-
+        OnStage.theActorCalled("Ivan").wasAbleTo(Botones.boton());
     }
 
-    @Entonces("^el verifica el texto de que es ser choucair$")
-    public void elVerificaElTextoDeQueEsSerChoucair()  {
-
+    @Entonces("^el verifica el texto de que es (.*)$")
+    public void elVerificaElTextoDeQueEsSerChoucair(String palabra)  {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado.esLa(palabra)));
     }
 
     @Cuando("^el da click en el boton convocatorias$")
     public void elDaClickEnElBotonConvocatorias()  {
-
+        OnStage.theActorCalled("Ivan").wasAbleTo(Botones2.boton());
     }
 
-    @Entonces("^el verifica el texto de convocatorias$")
-    public void elVerificaElTextoDeConvocatorias()  {
-
+    @Entonces("^el verifica el texto de (.*)$")
+    public void elVerificaElTextoDeConvocatorias(String palabra)  {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado2.esLa(palabra)));
     }
 
     @Cuando("^el da click en el boton prepararse para aplicar$")
     public void elDaClickEnElBotonPrepararseParaAplicar() {
-
+        OnStage.theActorCalled("Ivan").wasAbleTo(Botones3.boton());
     }
 
-    @Entonces("^el verifica el texto de prepararse para aplicar$")
-    public void elVerificaElTextoDePrepararseParaAplicar() {
-
+    @Entonces("^el verifica el texto de (.*)$")
+    public void elVerificaElTextoDePrepararseParaAplicar(String palabra) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Resultado3.esLa(palabra)));
     }
 
     @Dado("^que pepe quiere acceder a la pagina de empleos$")
