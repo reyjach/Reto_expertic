@@ -11,5 +11,7 @@ public class ChoucairTestingJobsPage {
     public static final Target TEXTO_UBICACION = Target.the("campo para escribir la ubicación a buscar").located(By.id("search_location"));
     public static final Target BOTON_BUSCAR_TRABAJOS = Target.the("botón para buscar trabajos").located(By.xpath("//input[@value='Buscar trabajos']"));
     public static final Target TEXTO_TITULO_CARGO = Target.the("texto que contiene el título del cargo disponible").located(By.xpath("//ul//h3"));
+    public static final Target TEXTO_TITULO_CARGO_UNO = Target.the("texto que contiene el título del cargo disponible").located(By.xpath("(//ul[@class='job_listings']//a)[1]"));
     public static final Target TEXTO_CIUDAD_CARGO = Target.the("texto que contiene la ubicación del cargo disponible").located(By.xpath("//div[@class='location']"));
+    public static final Target BOTON_COOKIES = Target.the("captcha").located(By.id("cookie_action_close_header"));
 }

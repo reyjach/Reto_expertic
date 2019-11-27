@@ -12,6 +12,7 @@ Característica: Choucair Testing seccion empleos
     Y que pepe quiere ver el contenido de la pagina de empleos
     Cuando el da click en el boton que es ser choucair
     Entonces  el verifica el texto de que es ser choucair
+
   @Tag2
   Escenario: Usar botones de redireccionamiento
     Y que pepe quiere ver el contenido de la pagina de empleos
@@ -53,22 +54,21 @@ Característica: Choucair Testing seccion empleos
 
   @Tag7
   Escenario: llenar formulario correctos
-    Dado que pepe quiere llenar el formulario con sus datos
-    Cuando el llena el formualrio de la pagina
+    Dado que pepe quiere ingresar a la seccion empleos
+    Y él quiere acceder a una oferta de empleo
+    Cuando él llena el formulario de inscribirse al empleo
       | nombre  | correo | celular | estudiosFormales | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional | hojaVida |
-      | pepe arturo lovezno  | coreoflaso@gotmail.com | 3118961374 | tecnologo sistemas | 2 años | si | 2.000.000 | Inmendiato | soy responsable, puntual. que me gusta probar |  |
+      | pepe arturo lovezno  | coreoflaso@gotmail.com | 3118961374 | tecnologo sistemas | 2 años | si | 2.000.000 | Inmediata | soy responsable, puntual. que me gusta probar | C:\Users\Ivan Jimenez\Desktop\Screenshot_1.png |
 
     Entonces el verifica que se carga la pantalla con el texto Double Click on Edit Icon to EDIT the Table Row
-      | salida |
-      | -Double Click on Edit Icon to EDIT the Table Row. |
+
 
   @Tag8
   Escenario: llenar formulario incorrectos
     Dado que carlos quiere llenar el formulario con datos incorrectos
     Cuando el llena el formualrio de la pagina
       | nombre  | correo | celular | estudiosFormales | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional | hojaVida |
-      | pepito perez  | coreoflaso@correo.com | -3118961374 | gaminiar y hacer nada | ni chimba  | no | 15.000.000 | Inmendiato | soy del verde y soy feliz |  |
+      | pepito perez  | coreoflaso@correo.com | -3118961374 | gaminiar y hacer nada | ni chimba  | no | 15.000.000 | Inmediata | soy del verde y soy feliz |  |
 
     Entonces el verifica que se carga la pantalla con el texto Double Click on Edit Icon to EDIT the Table Row
-      | salida |
-      | -Double Click on Edit Icon to EDIT the Table Row. |
+

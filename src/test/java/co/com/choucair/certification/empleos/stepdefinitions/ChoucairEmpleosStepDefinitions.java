@@ -1,10 +1,16 @@
 package co.com.choucair.certification.empleos.stepdefinitions;
 
+import co.com.choucair.certification.empleos.models.DataModel;
 import co.com.choucair.certification.empleos.tasks.Abrir;
+import co.com.choucair.certification.empleos.tasks.CompletarFormulario;
+import co.com.choucair.certification.empleos.tasks.IngresarALaSeccion;
+import co.com.choucair.certification.empleos.tasks.IngresarAOferta;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -86,14 +92,19 @@ public class ChoucairEmpleosStepDefinitions {
 
     }
 
-    @Dado("^que pepe quiere llenar el formulario con sus datos$")
+    @Dado("^que pepe quiere ingresar a la seccion empleos$")
     public void quePepeQuiereLlenarElFormularioConSusDatos() {
-
+        theActorInTheSpotlight().wasAbleTo(IngresarALaSeccion.empleos());
     }
 
-    @Cuando("^el llena el formualrio de la pagina$")
-    public void elLlenaElFormualrioDeLaPagina() {
+    @Dado("^él quiere acceder a una oferta de empleo$")
+    public void élQuiereAccederAUnaOfertaDeEmpleo() {
+        theActorInTheSpotlight().wasAbleTo(IngresarAOferta.deEmpleo());
+    }
 
+    @Cuando("^él llena el formulario de inscribirse al empleo$")
+    public void élLlenaElFormualrioDeInscribirseAlEmpleo(List<DataModel> dataSet) {
+        theActorInTheSpotlight().attemptsTo(CompletarFormulario.deInscripcion(dataSet));
     }
 
     @Entonces("^el verifica que se carga la pantalla con el texto Double Click on Edit Icon to EDIT the Table Row$")

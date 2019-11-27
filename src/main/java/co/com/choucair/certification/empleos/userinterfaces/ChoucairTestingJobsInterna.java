@@ -16,6 +16,8 @@ public class ChoucairTestingJobsInterna {
     public static final Target AREA_MENSAJE_ADICIONAL = Target.the("Area para escribir el mensaje adicional").located(By.name("your-message"));
     public static final Target CAMPO_HOJA_VIDA = Target.the("Campo para subir el archivo con la hoja de vida").located(By.name("file-736"));
     public static final Target RECAPTCHA = Target.the("captcha").located(By.id("recaptcha-anchor-label"));
+    public static final Target VIDEO_JOBS = Target.the("captcha").located(By.xpath("//body[@class='job_listing-template-default single single-job_listing postid-387 sydney group-blog mob-menu-slideout-over elementor-default siteScrolled']"));
+
     public static final Target BOTON_ENVIAR = Target.the("botón para enviar los datos del formulario").located(By.id("//input[@value='Enviar']"));
 
 }
