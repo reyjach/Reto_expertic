@@ -15,5 +15,6 @@ public class ChoucairTestingJobsPage {
     public static final Target H2_SER_CHOUCAIR = Target.the("el texto de ser choucair").located(By.xpath("//h2[contains(text(),'SER CHOUCAIR')]"));
     public static final Target H2_CONVOCATORIAS = Target.the("el texto de ser choucair").located(By.xpath("//h2[contains(text(),'CONVOCATORIAS')]"));
     public static final Target PREPARARSE_PARA_APLICAR = Target.the("el texto de ser choucair").located(By.xpath("//h2[contains(text(),'PREPARARSE PARA APLICAR')]"));
+    public static final Target TITULO_EMPLEOS_DISPONIBLES = Target.the("titulo de empleos disponibles").located(By.xpath("//h2[@class='elementor-heading-title elementor-size-default']"));
     public static final Target BOTON_COOKIES = Target.the("captcha").located(By.id("cookie_action_close_header"));
 }

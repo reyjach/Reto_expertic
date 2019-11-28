@@ -27,8 +27,10 @@ Característica: Choucair Testing seccion empleos
   Escenario: Buscar un empleo en panama
     Cuando el busca una oferta de analista de pruebas en panama
       | nombreEmpleo        | Ubicacion |
-      | analista de pruebas | Panama    |
+      | analista de pruebas | Panamá    |
     Entonces  el verifica las ofertas de empleo como analista de pruebas en panama
+      | nombreEmpleo        | Ubicacion |
+      | analista de pruebas Panamá | Panamá    |
 
 
   @Tag5
@@ -37,14 +39,17 @@ Característica: Choucair Testing seccion empleos
       | nombreEmpleo        | Ubicacion |
       | analista de pruebas | Medellin  |
     Entonces  el verifica las ofertas de empleo como psicologo de seleccion en medellin
+      | nombreEmpleo        | Ubicacion |
+      | analista de pruebas Medellín | Medellin  |
 
   @Tag6
-  Escenario: Buscar un empleo en panama
-    Cuando el busca una oferta de analista de pruebas en bogota
+  Escenario: Buscar un empleo en Alemania
+    Cuando el busca una oferta de analista de pruebas en Alemania
       | nombreEmpleo        | ubicacion |
-      | analista de pruebas | Bogota    |
-    Entonces  el verifica las ofertas de empleo como analista de pruebas en bogota
-
+      | analista de pruebas | Alemania    |
+    Entonces  el verifica que no hay ofertas de empleo
+      | nombreEmpleo        | ubicacion |
+      | analista de pruebas Alemania | Alemania    |
 
   @Tag7
   Escenario: llenar formulario con datos correctos
@@ -53,14 +58,5 @@ Característica: Choucair Testing seccion empleos
       | nombre              | correo                 | celular    | estudiosFormales   | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional                              | hojaVida                                       |
       | pepe arturo lovezno | coreoflaso@gotmail.com | 3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | C:\Users\Ivan Jimenez\Desktop\Screenshot_1.png |
 
-    Entonces el verifica que no se muestran mensajes de error
+    Entonces el ve en pantalla el mensaje de Por favor verifica el captcha
 
-
-  @Tag8
-  Escenario: llenar formulario con datos incorrectos
-    Y él ingresa a una oferta de empleo
-    Cuando él llena el formulario de inscripción al empleo
-      | nombre       | correo                | celular     | estudiosFormales      | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional          | hojaVida |
-      | pepito perez | coreoflaso@correo.com | -3118961374 | gaminiar y hacer nada | ni chimba   | no                   | 15.000.000         | Inmediata              | soy del verde y soy feliz |          |
-
-    Entonces el verifica que hay mensajes de error

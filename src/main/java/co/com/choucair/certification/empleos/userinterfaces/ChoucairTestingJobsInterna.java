@@ -15,9 +15,9 @@ public class ChoucairTestingJobsInterna {
     public static final Target SELECT_DISPONIBILIDAD_TIEMPO = Target.the("Desplegable para seleccionar la disponibilidad de tiempo para aceptar el empleo").located(By.name("curso"));
     public static final Target AREA_MENSAJE_ADICIONAL = Target.the("Area para escribir el mensaje adicional").located(By.name("your-message"));
     public static final Target CAMPO_HOJA_VIDA = Target.the("Campo para subir el archivo con la hoja de vida").located(By.name("file-736"));
-    public static final Target RECAPTCHA = Target.the("captcha").located(By.id("recaptcha-anchor-label"));
-    public static final Target VIDEO_JOBS = Target.the("captcha").located(By.xpath("//body[@class='job_listing-template-default single single-job_listing postid-387 sydney group-blog mob-menu-slideout-over elementor-default siteScrolled']"));
+    public static final Target MENSAJE_RECAPTCHA = Target.the("mensaje verificar el recaptcha").located(By.xpath("//span[@class='wpcf7-not-valid-tip']"));
+    public static final Target VIDEO_JOBS = Target.the("video interna empleos").located(By.xpath("//body[@class='job_listing-template-default single single-job_listing postid-387 sydney group-blog mob-menu-slideout-over elementor-default siteScrolled']"));
 
-    public static final Target BOTON_ENVIAR = Target.the("botón para enviar los datos del formulario").located(By.id("//input[@value='Enviar']"));
+    public static final Target BOTON_ENVIAR = Target.the("botón para enviar los datos del formulario").located(By.xpath("//input[@value='Enviar']"));
 
 }

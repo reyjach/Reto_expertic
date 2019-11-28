@@ -27,7 +27,8 @@ public class BuscarEmpleoMedellin implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Scroll.to(TEXTO_PALABRAS_CLAVE),
+        actor.attemptsTo(Click.on(BOTON_COOKIES),
+                Scroll.to(TITULO_EMPLEOS_DISPONIBLES),
                 Enter.theValue(dataSet.get(CERO).getNombreEmpleo()).into(TEXTO_PALABRAS_CLAVE),
                 Enter.theValue(dataSet.get(CERO).getUbicacion()).into(TEXTO_UBICACION),
                 Click.on(BOTON_BUSCAR_TRABAJOS)

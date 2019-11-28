@@ -24,26 +24,18 @@ public class TextoBuscarTrabajo implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        boolean valor = false;
-        List<WebElementFacade> listOpciones = TEXTO_TITULO_CARGO.resolveAllFor(actor);
-        List<WebElementFacade> listOpciones2 = TEXTO_CIUDAD_CARGO.resolveAllFor(actor);
-        for (WebElementFacade opcionon : listOpciones) {
-            if (opcionon.getText().trim().equals(dataSet.get(CERO).getNombreEmpleo())){
-                valor = true;
+        List<WebElementFacade> listCargos = TEXTO_TITULO_CARGO.resolveAllFor(actor);
+        List<WebElementFacade> listUbicaciones = TEXTO_CIUDAD_CARGO.resolveAllFor(actor);
+        for (WebElementFacade cargo : listCargos) {
+            if (!cargo.getText().trim().toLowerCase().contains(dataSet.get(CERO).getNombreEmpleo().toLowerCase())){
+                return false;
             }
         }
-        for (WebElementFacade opcionon2 : listOpciones) {
-            //System.out.println(dato + opcion.getText().trim());
-            if (opcionon2.getText().trim().equals(dataSet.get(CERO).getUbicacion())){
-                valor = true;
+        for (WebElementFacade ubicacion : listUbicaciones) {
+            if (!ubicacion.getText().trim().toLowerCase().contains(dataSet.get(CERO).getUbicacion().toLowerCase())){
+                return false;
             }
         }
-
-        if(valor){
-            return true;
-        }else {
-            return false;
-        }
-
+       return true;
     }
 }

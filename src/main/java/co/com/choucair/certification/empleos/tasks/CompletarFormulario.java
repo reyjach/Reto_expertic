@@ -41,7 +41,8 @@ public class CompletarFormulario implements Task {
                 SelectFromOptions.byVisibleText(dataSet.get(CERO).getDisponibilidadIngresar()).from(SELECT_DISPONIBILIDAD_TIEMPO),
                 Enter.theValue(dataSet.get(CERO).getMensajeAdicional()).into(AREA_MENSAJE_ADICIONAL),
                 Scroll.to(AREA_MENSAJE_ADICIONAL),
-                SubirArchivo.desde(dataSet.get(CERO).getHojaVida())
+                SubirArchivo.desde(dataSet.get(CERO).getHojaVida()),
+                Click.on(BOTON_ENVIAR)
         );
     }
 }

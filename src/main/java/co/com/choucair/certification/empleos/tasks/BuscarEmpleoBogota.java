@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 
 import java.util.List;
 
@@ -26,9 +27,9 @@ public class BuscarEmpleoBogota implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(TEXTO_PALABRAS_CLAVE),
+        actor.attemptsTo(Click.on(BOTON_COOKIES),
+                Scroll.to(TITULO_EMPLEOS_DISPONIBLES),
                 Enter.theValue(dataSet.get(CERO).getNombreEmpleo()).into(TEXTO_PALABRAS_CLAVE),
-                Click.on(TEXTO_UBICACION),
                 Enter.theValue(dataSet.get(CERO).getUbicacion()).into(TEXTO_UBICACION),
                 Click.on(BOTON_BUSCAR_TRABAJOS)
         );
