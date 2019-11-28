@@ -1,8 +1,8 @@
 #language:es
-  @Tag0
-Característica: Botones de redireccionamiento
+@Tag0
+Característica: Choucair Testing seccion empleos
   como usuario quiero ingresar a la seccion empleos de choucair testing
-  a leer la información utilizando los botones de redirección
+  a probar todo (?
 
   Antecedentes:
     Dado que Ivan quiere ingresar a la seccion empleos del sitio Choucair Testing
@@ -22,7 +22,6 @@ Característica: Botones de redireccionamiento
   Escenario: Usar botones de redireccionamiento
     Cuando el da click en el boton prepararse para aplicar
     Entonces  el verifica el texto en PREPARARSE PARA APLICAR
-
 
   @Tag4
   Escenario: Buscar un empleo en panama
@@ -54,7 +53,7 @@ Característica: Botones de redireccionamiento
       | nombre              | correo                 | celular    | estudiosFormales   | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional                              | hojaVida                                       |
       | pepe arturo lovezno | coreoflaso@gotmail.com | 3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | C:\Users\Ivan Jimenez\Desktop\Screenshot_1.png |
 
-    Entonces el verifica que se carga la pantalla con el texto Double Click on Edit Icon to EDIT the Table Row
+    Entonces el verifica que no se muestran mensajes de error
 
 
   @Tag8
@@ -64,5 +63,4 @@ Característica: Botones de redireccionamiento
       | nombre       | correo                | celular     | estudiosFormales      | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional          | hojaVida |
       | pepito perez | coreoflaso@correo.com | -3118961374 | gaminiar y hacer nada | ni chimba   | no                   | 15.000.000         | Inmediata              | soy del verde y soy feliz |          |
 
-    Entonces el verifica que se carga la pantalla con el texto Double Click on Edit Icon to EDIT the Table Row
-
+    Entonces el verifica que hay mensajes de error

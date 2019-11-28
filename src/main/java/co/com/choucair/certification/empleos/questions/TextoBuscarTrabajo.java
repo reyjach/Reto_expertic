@@ -1,6 +1,6 @@
 package co.com.choucair.certification.empleos.questions;
 
-import co.com.choucair.certification.empleos.models.BuscarEmpleoModel;
+import co.com.choucair.certification.empleos.models.DataModel;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -12,13 +12,13 @@ import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTesti
 import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
 public class TextoBuscarTrabajo implements Question<Boolean> {
-    private List<BuscarEmpleoModel> dataSet;
+    private List<DataModel> dataSet;
 
-    public TextoBuscarTrabajo(List<BuscarEmpleoModel> dataSet) {
+    public TextoBuscarTrabajo(List<DataModel> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public static TextoBuscarTrabajo es(List<BuscarEmpleoModel> dataSet){
+    public static TextoBuscarTrabajo es(List<DataModel> dataSet){
         return new TextoBuscarTrabajo(dataSet);
     }
 

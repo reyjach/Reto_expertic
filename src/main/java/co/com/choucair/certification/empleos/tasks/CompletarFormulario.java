@@ -1,7 +1,7 @@
 package co.com.choucair.certification.empleos.tasks;
 
 import co.com.choucair.certification.empleos.interactions.SubirArchivo;
-import co.com.choucair.certification.empleos.models.InscripcionModel;
+import co.com.choucair.certification.empleos.models.DataModel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -17,13 +17,13 @@ import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
 public class CompletarFormulario implements Task {
 
-    private List<InscripcionModel> dataSet;
+    private List<DataModel> dataSet;
 
-    public CompletarFormulario(List<InscripcionModel> dataSet) {
+    public CompletarFormulario(List<DataModel> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public static CompletarFormulario deInscripcion(List<InscripcionModel> dataSet) {
+    public static CompletarFormulario deInscripcion(List<DataModel> dataSet) {
         return Tasks.instrumented(CompletarFormulario.class, dataSet);
     }
 
