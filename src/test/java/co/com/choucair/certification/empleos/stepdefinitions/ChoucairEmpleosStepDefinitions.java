@@ -225,7 +225,7 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
     }
 
     @Cuando("^él llena el formulario de inscripción al empleo$")
-    public void élLlenaElFormularioDeInscripciónAlEmpleo()  {
+    public void élLlenaElFormularioDeInscripciónAlEmpleo(List<DataModel>dataSet)  {
 
         theActorInTheSpotlight().attemptsTo(CompletarFormulario.deInscripcion(dataSet));
     }
