@@ -29,7 +29,7 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
 
     @Cuando("^el da click en el boton que es ser choucair$")
     public void elDaClickEnElBotonQueEsSerChoucair()  {
-        theActorInTheSpotlight().attemptsTo(Botones.boton());
+        theActorInTheSpotlight().attemptsTo(BotonSerChoucair.botonSerChoucair());
 
     }
 
@@ -40,7 +40,7 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
 
     @Cuando("^el da click en el boton convocatorias$")
     public void elDaClickEnElBotonConvocatorias()  {
-        theActorInTheSpotlight().attemptsTo(Botones2.boton());
+        theActorInTheSpotlight().attemptsTo(BotonConvocatoria.botonConvocatoria());
     }
 
     @Entonces("^el verifica el texto de CONVOCATORIAS$")
@@ -51,7 +51,7 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
 
     @Cuando("^el da click en el boton prepararse para aplicar$")
     public void elDaClickEnElBotonPrepararseParaAplicar()  {
-        theActorInTheSpotlight().attemptsTo(Botones3.boton());
+        theActorInTheSpotlight().attemptsTo(BotonPrepararseAplicar.botonPrepararseAplicar());
     }
 
     @Entonces("^el verifica el texto en PREPARARSE PARA APLICAR$")

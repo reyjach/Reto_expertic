@@ -2,23 +2,23 @@
 @SeccionEmpleos
 Característica: Choucair Testing seccion empleos
   como usuario quiero ingresar a la seccion empleos de choucair testing
-  a probar todo (?
+  a buscar una oferta de empleo
 
   Antecedentes:
     Dado que Ivan quiere ingresar a la seccion empleos del sitio Choucair Testing
 
-  @BotonSerChoucair
+  @BotonRedireccionamiento
   Escenario: Usar botones de redireccionamiento
 
     Cuando el da click en el boton que es ser choucair
     Entonces  el verifica el titulo de que es SER CHOUCAIR
 
-  @BotonConvocatorias
+  @BotonRedireccionamiento
   Escenario: Usar botones de redireccionamiento
     Cuando el da click en el boton convocatorias
     Entonces  el verifica el texto de CONVOCATORIAS
 
-  @BotonAplicar
+  @BotonRedireccionamiento
   Escenario: Usar botones de redireccionamiento
     Cuando el da click en el boton prepararse para aplicar
     Entonces  el verifica el texto en PREPARARSE PARA APLICAR

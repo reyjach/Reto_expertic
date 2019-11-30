@@ -7,10 +7,10 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.BOTON_CONVOCATORIAS;
 
-public class Botones2 implements Task {
+public class BotonConvocatoria implements Task {
 
 
-    public static Botones2 boton(){return Tasks.instrumented(Botones2.class);}
+    public static BotonConvocatoria botonConvocatoria(){return Tasks.instrumented(BotonConvocatoria.class);}
 
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTON_CONVOCATORIAS));
