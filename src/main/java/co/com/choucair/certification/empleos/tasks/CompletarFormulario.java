@@ -29,7 +29,7 @@ public class CompletarFormulario implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Scroll.to(VIDEO_JOBS),
+        actor.attemptsTo(Scroll.to(BOTON_INSCRIBIRSE).andAlignToBottom(),
                 Click.on(BOTON_INSCRIBIRSE),
                 Enter.theValue(dataSet.get(CERO).getNombre()).into(CAMPO_NOMBRE),
                 Enter.theValue(dataSet.get(CERO).getCorreo()).into(CAMPO_CORREO_ELECTRONICO),

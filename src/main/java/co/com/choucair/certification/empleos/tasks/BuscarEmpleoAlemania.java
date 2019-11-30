@@ -13,16 +13,16 @@ import java.util.List;
 import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.*;
 import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
-public class BuscarEmpleoPanama implements Task {
+public class BuscarEmpleoAlemania implements Task {
 
     private List<DataModel> dataSet;
 
-    public BuscarEmpleoPanama(List<DataModel> dataSet) {
+    public BuscarEmpleoAlemania(List<DataModel> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public static BuscarEmpleoPanama con(List<DataModel> dataSet) {
-        return Tasks.instrumented(BuscarEmpleoPanama.class,dataSet);
+    public static BuscarEmpleoAlemania con(List<DataModel> dataSet) {
+        return Tasks.instrumented(BuscarEmpleoAlemania.class, dataSet);
     }
 
     @Override
@@ -32,7 +32,8 @@ public class BuscarEmpleoPanama implements Task {
                 Enter.theValue(dataSet.get(CERO).getNombreEmpleo()).into(TEXTO_PALABRAS_CLAVE),
                 Enter.theValue(dataSet.get(CERO).getUbicacion()).into(TEXTO_UBICACION),
                 Click.on(BOTON_BUSCAR_TRABAJOS)
-                );
+        );
 
     }
 }
+

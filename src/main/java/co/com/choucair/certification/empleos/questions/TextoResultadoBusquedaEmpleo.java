@@ -11,15 +11,15 @@ import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTesti
 import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTestingJobsPage.TEXTO_TITULO_CARGO;
 import static co.com.choucair.certification.empleos.utils.Constantes.CERO;
 
-public class TextoBuscarTrabajo implements Question<Boolean> {
+public class TextoResultadoBusquedaEmpleo implements Question<Boolean> {
     private List<DataModel> dataSet;
 
-    public TextoBuscarTrabajo(List<DataModel> dataSet) {
+    public TextoResultadoBusquedaEmpleo(List<DataModel> dataSet) {
         this.dataSet = dataSet;
     }
 
-    public static TextoBuscarTrabajo es(List<DataModel> dataSet){
-        return new TextoBuscarTrabajo(dataSet);
+    public static TextoResultadoBusquedaEmpleo es(List<DataModel> dataSet){
+        return new TextoResultadoBusquedaEmpleo(dataSet);
     }
 
     @Override

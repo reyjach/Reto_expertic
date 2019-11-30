@@ -4,6 +4,9 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class ChoucairTestingJobsInterna {
+    private ChoucairTestingJobsInterna() {
+    }
+
     public static final Target BOTON_INSCRIBIRSE = Target.the("botón para desplegar el formulario de inscripción").located(By.xpath("//input[@class='application_button button']"));
     public static final Target CAMPO_NOMBRE = Target.the("Campo para escribir el nombre completo").located(By.name("your-name"));
     public static final Target CAMPO_CORREO_ELECTRONICO = Target.the("Campo para escribir el correo electrónico").located(By.name("your-email"));
@@ -16,7 +19,6 @@ public class ChoucairTestingJobsInterna {
     public static final Target AREA_MENSAJE_ADICIONAL = Target.the("Area para escribir el mensaje adicional").located(By.name("your-message"));
     public static final Target CAMPO_HOJA_VIDA = Target.the("Campo para subir el archivo con la hoja de vida").located(By.name("file-736"));
     public static final Target MENSAJE_RECAPTCHA = Target.the("mensaje verificar el recaptcha").located(By.xpath("//span[@class='wpcf7-not-valid-tip']"));
-    public static final Target VIDEO_JOBS = Target.the("video interna empleos").located(By.xpath("//body[@class='job_listing-template-default single single-job_listing postid-387 sydney group-blog mob-menu-slideout-over elementor-default siteScrolled']"));
 
     public static final Target BOTON_ENVIAR = Target.the("botón para enviar los datos del formulario").located(By.xpath("//input[@value='Enviar']"));
 

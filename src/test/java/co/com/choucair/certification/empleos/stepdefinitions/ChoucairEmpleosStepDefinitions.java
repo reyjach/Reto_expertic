@@ -1,12 +1,13 @@
 package co.com.choucair.certification.empleos.stepdefinitions;
 
 import co.com.choucair.certification.empleos.models.DataModel;
-import co.com.choucair.certification.empleos.questions.TextoBuscarTrabajo;
+import co.com.choucair.certification.empleos.questions.TextoResultadoBusquedaEmpleo;
 import co.com.choucair.certification.empleos.tasks.*;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.GivenWhenThen;
+import net.thucydides.core.annotations.Manual;
 
 import java.util.List;
 
@@ -15,8 +16,7 @@ import static co.com.choucair.certification.empleos.userinterfaces.ChoucairTesti
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 public class ChoucairEmpleosStepDefinitions {
@@ -41,8 +41,6 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
     @Cuando("^el da click en el boton convocatorias$")
     public void elDaClickEnElBotonConvocatorias()  {
         theActorInTheSpotlight().attemptsTo(Botones2.boton());
-
-
     }
 
     @Entonces("^el verifica el texto de CONVOCATORIAS$")
@@ -58,42 +56,31 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
 
     @Entonces("^el verifica el texto en PREPARARSE PARA APLICAR$")
     public void elVerificaElTextoEnPREPARARSEPARAAPLICAR()  {
-        theActorInTheSpotlight().should(seeThat(the(PREPARARSE_PARA_APLICAR), isEnabled()));
+        theActorInTheSpotlight().should(seeThat(the(PREPARARSE_PARA_APLICAR), isVisible()));
 
     }
 
-    @Cuando("^el busca una oferta de analista de pruebas en panama$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnPanama(List<DataModel>dataSet)  {
-        theActorInTheSpotlight().attemptsTo(BuscarEmpleoPanama.con(dataSet));
-    }
-
-    @Entonces("^el verifica las ofertas de empleo como analista de pruebas en panama$")
-    public void elVerificaLasOfertasDeEmpleoComoAnalistaDePruebasEnPanama(List<DataModel>dataSet)  {
-        theActorInTheSpotlight().should(seeThat(TextoBuscarTrabajo.es(dataSet)));
-
-    }
-
-    @Cuando("^el busca una oferta de psicologo de seleccion en medellin$")
-    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnMedellin(List<DataModel>dataSet)  {
+    @Cuando("^el busca una oferta de analista en medellin$")
+    public void elBuscaUnaOfertaDeAnalistaEnMedellin(List<DataModel>dataSet)  {
         theActorInTheSpotlight().attemptsTo(BuscarEmpleoMedellin.con(dataSet));
             }
 
-    @Entonces("^el verifica las ofertas de empleo como psicologo de seleccion en medellin$")
-    public void elVerificaLasOfertasDeEmpleoComoPsicologoDeSeleccionEnMedellin(List<DataModel>dataSet)  {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoBuscarTrabajo.es(dataSet)));
+    @Entonces("^el verifica las ofertas de empleo como analista en medellin$")
+    public void elVerificaLasOfertasDeEmpleoComoAnalistaEnMedellin(List<DataModel>dataSet)  {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TextoResultadoBusquedaEmpleo.es(dataSet)));
 
     }
 
 
-    @Cuando("^el busca una oferta de analista de pruebas en Alemania$")
-    public void elBuscaUnaOfertaDeAnalistaDePruebasEnAlemania(List<DataModel>dataSet)  {
-        theActorInTheSpotlight().attemptsTo(BuscarEmpleoBogota.con(dataSet));
+    @Cuando("^el busca una oferta de psicologo de seleccion en Alemania$")
+    public void elBuscaUnaOfertaDePsicologoDeSeleccionEnAlemania(List<DataModel>dataSet)  {
+        theActorInTheSpotlight().attemptsTo(BuscarEmpleoAlemania.con(dataSet));
 
     }
 
     @Entonces("^el verifica que no hay ofertas de empleo$")
-    public void elVerificaQueNoHayOfertasDeEmpleo(List<DataModel>dataSet)  {
-        theActorInTheSpotlight().should(seeThat(TextoBuscarTrabajo.es(dataSet)));
+    public void elVerificaQueNoHayOfertasDeEmpleo()  {
+        theActorInTheSpotlight().should(seeThat(the(TEXTO_NO_JOBS_FOUND),isVisible()));
 
     }
 
@@ -108,12 +95,31 @@ public void queIvanQuiereIngresarALaSeccionEmpleosDelSitioChoucairTesting(String
         theActorInTheSpotlight().attemptsTo(CompletarFormulario.deInscripcion(dataSet));
 
     }
-    @Entonces("^el ve en pantalla el mensaje de (.*)$")
-    public void elVeEnPantallaElMensajeDePorFavorVerificaElCaptcha(String mensaje)  {
+    @Entonces("^el ve en pantalla el mensaje de Por favor verifica el captcha$")
+    public void elVeEnPantallaElMensajeDePorFavorVerificaElCaptcha()  {
         theActorInTheSpotlight().should(seeThat(the(MENSAJE_RECAPTCHA),isVisible()));
 
     }
 
+    @Manual
+    @Cuando("^él ingresa a los links de la seccion prepararse para aplicar$")
+    public void élIngresaALosLinksDeLaSeccionPrepararseParaAplicar()  {
 
+    }
+
+    @Entonces("^el verifica que se abre una pestaña con el contenido adecuado$")
+    public void elVerificaQueSeAbreUnaPestañaConElContenidoAdecuado()  {
+
+    }
+
+    @Cuando("^él reproduce el video de la seccion empleos$")
+    public void élReproduceElVideoDeLaSeccionEmpleos()  {
+
+    }
+
+    @Entonces("^el verifica que el contenido del video está acorde con la sección$")
+    public void elVerificaQueElContenidoDelVideoEstáAcordeConLaSección()  {
+
+    }
 
 }

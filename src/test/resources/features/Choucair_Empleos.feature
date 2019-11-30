@@ -1,5 +1,5 @@
 #language:es
-@Tag0
+@SeccionEmpleos
 Característica: Choucair Testing seccion empleos
   como usuario quiero ingresar a la seccion empleos de choucair testing
   a probar todo (?
@@ -7,56 +7,56 @@ Característica: Choucair Testing seccion empleos
   Antecedentes:
     Dado que Ivan quiere ingresar a la seccion empleos del sitio Choucair Testing
 
-  @Tag1
+  @BotonSerChoucair
   Escenario: Usar botones de redireccionamiento
 
     Cuando el da click en el boton que es ser choucair
     Entonces  el verifica el titulo de que es SER CHOUCAIR
 
-  @Tag2
+  @BotonConvocatorias
   Escenario: Usar botones de redireccionamiento
     Cuando el da click en el boton convocatorias
     Entonces  el verifica el texto de CONVOCATORIAS
 
-  @Tag3
+  @BotonAplicar
   Escenario: Usar botones de redireccionamiento
     Cuando el da click en el boton prepararse para aplicar
     Entonces  el verifica el texto en PREPARARSE PARA APLICAR
 
-  @Tag4
-  Escenario: Buscar un empleo en panama
-    Cuando el busca una oferta de analista de pruebas en panama
-      | nombreEmpleo        | Ubicacion |
-      | analista de pruebas | Panamá    |
-    Entonces  el verifica las ofertas de empleo como analista de pruebas en panama
-      | nombreEmpleo        | Ubicacion |
-      | analista de pruebas Panamá | Panamá    |
 
-
-  @Tag5
+  @BuscarEmpleoMedellin
   Escenario: Buscar un empleo en medellin
-    Cuando el busca una oferta de psicologo de seleccion en medellin
-      | nombreEmpleo        | Ubicacion |
-      | analista de pruebas | Medellin  |
-    Entonces  el verifica las ofertas de empleo como psicologo de seleccion en medellin
-      | nombreEmpleo        | Ubicacion |
-      | analista de pruebas Medellín | Medellin  |
+    Cuando el busca una oferta de analista en medellin
+      | nombreEmpleo | Ubicacion |
+      | analista     | Medellin  |
+    Entonces  el verifica las ofertas de empleo como analista en medellin
+      | nombreEmpleo | Ubicacion |
+      | analista     | Medellín  |
 
-  @Tag6
+  @BuscarEmpleoAlemania
   Escenario: Buscar un empleo en Alemania
-    Cuando el busca una oferta de analista de pruebas en Alemania
-      | nombreEmpleo        | ubicacion |
-      | analista de pruebas | Alemania    |
+    Cuando el busca una oferta de psicologo de seleccion en Alemania
+      | nombreEmpleo | ubicacion |
+      | psicologo     | Alemania  |
     Entonces  el verifica que no hay ofertas de empleo
-      | nombreEmpleo        | ubicacion |
-      | analista de pruebas Alemania | Alemania    |
 
-  @Tag7
-  Escenario: llenar formulario con datos correctos
+
+  @FormularioInscripcion
+  Escenario: llenar formulario con datos no validos
     Y él accede a una oferta de empleo
     Cuando él llena el formulario de inscribirse al empleo
-      | nombre              | correo                 | celular    | estudiosFormales   | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional                              | hojaVida                                       |
-      | pepe arturo lovezno | coreoflaso@gotmail.com | 3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | C:\Users\Ivan Jimenez\Desktop\Screenshot_1.png |
+      | nombre   | correo                 | celular     | estudiosFormales   | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional                              | hojaVida         |
+      | juan 123 | coreoflaso@gotmail.com | -3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | src/test/resources/ArchivoPrueba.png |
 
     Entonces el ve en pantalla el mensaje de Por favor verifica el captcha
+
+  @Manual
+  Escenario: Probar links
+    Cuando él ingresa a los links de la seccion prepararse para aplicar
+    Entonces el verifica que se abre una pestaña con el contenido adecuado
+
+  @Manual
+  Escenario: Probar video
+    Cuando él reproduce el video de la seccion empleos
+    Entonces el verifica que el contenido del video está acorde con la sección
 
