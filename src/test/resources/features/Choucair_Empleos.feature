@@ -46,7 +46,7 @@ Característica: Choucair Testing seccion empleos
     Y él accede a una oferta de empleo
     Cuando él llena el formulario de inscribirse al empleo
       | nombre   | correo                 | celular     | estudiosFormales   | experiencia | conoceAutomatizacion | aspiracionSalarial | disponibilidadIngresar | mensajeAdicional                              | hojaVida         |
-      | juan 123 | coreoflaso@gotmail.com | -3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | src/test/resources/ArchivoPrueba.png |
+      | juan 123 | coreoflaso@gotmail.com | -3118961374 | tecnologo sistemas | 2 años      | si                   | 2.000.000          | Inmediata              | soy responsable, puntual. que me gusta probar | src/test/resources/PruebaHojaVida.png |
 
     Entonces el ve en pantalla el mensaje de Por favor verifica el captcha
 
